@@ -3,13 +3,25 @@ import ReactDOM from "react-dom";
 
 import "./styles.css";
 
-function App() {
-  return (
-    <div className="App">
-      test
-    </div>
-  );
+class App extends React.Component {
+  constructor(succ) {
+    super(succ);
+  }
+  handlechange() {}
+  render() {
+    return (
+      <div className="input">
+        <form>
+          <input
+            type="text"
+            name="temp"
+            className="temp"
+            onChange={this.handlechange.bind(this)}
+          />
+        </form>
+      </div>
+    );
+  }
 }
-
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
