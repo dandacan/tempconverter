@@ -7,12 +7,12 @@ import "./styles.css";
 class App extends React.Component {
   constructor(succ) {
     super(succ);
-    state = {
+    this.state = {
       value: 0
     };
   }
   handlechange(event) {
-    this.setState({ input: event.target.value });
+    this.setState((this.value: event.target.value));
   }
   render() {
     return (
@@ -22,10 +22,11 @@ class App extends React.Component {
             type="text"
             name="temp"
             className="temp"
-            onChange={event => {this.handlechange(event)}}
+            onChange={event => {
+              this.handlechange(event);
+            }}
           />
         </form>
-        <Fahrenheit />
       </div>
     );
   }
