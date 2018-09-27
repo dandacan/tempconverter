@@ -1,13 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Fahrenheit from "./fahrenheit.js";
 
 import "./styles.css";
 
 class App extends React.Component {
   constructor(succ) {
     super(succ);
+    state = {
+      value: 0
+    };
   }
-  handlechange() {}
+  handlechange(event) {
+    this.setState({ input: event.target.value });
+  }
   render() {
     return (
       <div className="input">
@@ -16,9 +22,10 @@ class App extends React.Component {
             type="text"
             name="temp"
             className="temp"
-            onChange={this.handlechange.bind(this)}
+            onChange={event => {this.handlechange(event)}}
           />
         </form>
+        <Fahrenheit />
       </div>
     );
   }
